@@ -1,0 +1,30 @@
+
+
+.post {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #DBDBDB;
+    border-radius: 6px;
+    max-width: 450px;
+    margin-bottom: 15px;
+    
+}
+
+.post_image {
+    height:auto;
+    object-fit: contain;
+}
+
+.post_text {
+    font-weight: normal;
+    padding: 20px;
+}
+
+.top_post {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    padding: 10px;
+    font-size: 14px;
+}
