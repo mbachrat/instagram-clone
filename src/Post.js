@@ -42,13 +42,7 @@ function Post({user, postId, username, caption, imageUrl}) {
     setComment('');
   }
 
-  const openComments = () => {
-    {comments.map((comment) => (
-      <p>
-        <strong>{comment.username}</strong> {comment.text}
-      </p>
-    ))}
-  }
+
   
   return (
     <div className='post'>
@@ -73,8 +67,12 @@ function Post({user, postId, username, caption, imageUrl}) {
         {/*added comments*/}
           <div className='post_comments'>
 
-            <Button onClick={openComments}>View all comments</Button>
-
+          
+            {comments.map((comment) => (
+      <p>
+        <strong>{comment.username}</strong> {comment.text}
+      </p>
+    ))}
            
           </div>
 
