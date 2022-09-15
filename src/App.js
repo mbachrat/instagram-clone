@@ -8,6 +8,8 @@ import Button from '@mui/material/Button';
 import { ClassNames } from '@emotion/react';
 import { Input } from '@mui/material';
 import ImageUpload from './ImageUpload';
+import SearchBar from "./SearchBar"
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 
 const style = {
@@ -33,6 +35,7 @@ function App() {
  const [password, setpassword] = useState('');
  const [email, setEmail] = useState('');
  const [user, setUser] = useState(null);
+ const [picture, setPicture] = useState([])
 // useEffect runs a piece of code based on a specific condition
 
 useEffect(() =>{
@@ -94,121 +97,131 @@ const signIn = (event) => {
 
   return (
     <div className="App">
-      <div>
-
-{/* I want to have */}
-{/* Caption input */}
-{/* file picker */}
-{/* post button */}
-{user?.displayName ? (
-  <ImageUpload username={user.displayName} />
-): (
-  <h3>neeed to login</h3>
-)}
-
-
+      
 <Modal
-  open={open}
-  onClose={() => setOpen(false)}
- 
->
-  <div className={ClassNames.paper}>
-<Box sx={style}>
-  <form className='app_signup'>
-    
-  
-      <Input
-      type="text"
-      placeholder="username"
-      value={username}
-      onChange={(e)=> setUsername(e.target.value)}
-      />
-      <Input
-      type="email"
-      placeholder="email"
-      value={email}
-      onChange={(e)=> setEmail(e.target.value)}
-      />
-      <Input
-      type="password"
-      placeholder="password"
-      value={password}
-      onChange={(e)=> setpassword(e.target.value)}
-      />
-      <Button type="submit" onClick={signUp}>Sign Up</Button>
-   
- </form>
-</Box>
-  </div>
-</Modal>
+        open={picture}
+        onClose={() => setPicture(false)}>
+
+        <div className={ClassNames.paper}>
+          <Box sx={style}>
+          {user?.displayName ? (
+        <ImageUpload username={user.displayName} />
+      ): (
+        <h3>Need to Login</h3>
+      )}
+          </Box>
+        </div>
+      </Modal>
 
 
-<Modal
-  open={openSignIn}
-  onClose={() => setOpenSignIn(false)}
- 
->
-  <div className={ClassNames.paper}>
-<Box sx={style}>
-  <form className='app_signup'>
-    
-  
-     
-      <Input
-      type="email"
-      placeholder="email"
-      value={email}
-      onChange={(e)=> setEmail(e.target.value)}
-      />
-      <Input
-      type="password"
-      placeholder="password"
-      value={password}
-      onChange={(e)=> setpassword(e.target.value)}
-      />
-      <Button type="submit" onClick={signIn}>Sign In</Button>
-   
- </form>
-</Box>
-  </div>
-</Modal>
-</div>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}>
+
+        <div className={ClassNames.paper}>
+          <Box sx={style}>
+            <form className='app_signup'>
+          
+        
+              <Input
+              type="text"
+              placeholder="username"
+              value={username}
+              onChange={(e)=> setUsername(e.target.value)}
+              />
+              <Input
+              type="email"
+              placeholder="email"
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
+              />
+              <Input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e)=> setpassword(e.target.value)}
+              />
+              <Button type="submit" onClick={signUp}>Sign Up</Button>
+          
+            </form>
+          </Box>
+        </div>
+      </Modal>
+
+
+      <Modal
+        open={openSignIn}
+        onClose={() => setOpenSignIn(false)}>
+
+        <div className={ClassNames.paper}>
+          <Box sx={style}>
+            <form className='app_signup'>
+          
+        
+          
+              <Input
+              type="email"
+              placeholder="email"
+              value={email}
+              onChange={(e)=> setEmail(e.target.value)}
+              />
+              <Input
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e)=> setpassword(e.target.value)}
+              />
+              <Button type="submit" onClick={signIn}>Sign In</Button>
+        
+            </form>
+          </Box>
+        </div>
+      </Modal>
+      
 
 
           {/* HEADER */}
-        <div className='app_header'>
-          <img 
-          className='app_headerImage'
+      <div className='app_header'>
+        <img 
+            className='app_headerImage'
             src='https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png'
             alt='Instagram'> 
-            </img>
+        </img>
 
-            <div>
-              
-            </div>
+        <div>
+          <SearchBar />
+          {/*header icons and search bar */}
         </div>
+        <div className='right-corner'>
 
-        <h1>Hello good world 🫡</h1>
+          {user ? (
+            <div className='logout-button'>
+          <Button onClick={() => auth.signOut()}>LOGOUT</Button>
+            </div>
+        ): (
+          <div className='login-buttons'>
+            <Button onClick={() => setOpenSignIn(true)}>LOGIN</Button>
+            <Button onClick={() => setOpen(true)}>SIGNUP</Button>
+          </div>
+      )}
 
-{user ? (
-  <Button onClick={() => auth.signOut()}>LOGOUT</Button>
-): (
-  <div>
-  <Button onClick={() => setOpenSignIn(true)}>SIGN IN</Button>
-  <Button onClick={() => setOpen(true)}>SIGNUP</Button>
-  </div>
-)}
+          <Button onClick={() => setPicture(true)}>
+            <AddCircleOutlineIcon />&nbsp;POST
+          </Button>
+      </div>
+      
+      </div>
 
-        
+      <div className='post_app'>
         {
           posts.map(({id, post}) => (
             <Post key={id} user={user} postId={id} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
           ))
         }
-
+      </div>
         
         
-        {/*post */}
+        {/* post */}
         {/*post */}
 
     </div>
