@@ -35,7 +35,7 @@ function App() {
  const [password, setpassword] = useState('');
  const [email, setEmail] = useState('');
  const [user, setUser] = useState(null);
- const [picture, setPicture] = useState([])
+ const [picture, setPicture] = useState(false)
 // useEffect runs a piece of code based on a specific condition
 
 useEffect(() =>{
