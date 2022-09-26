@@ -8,5 +8,8 @@ Fake instagram with features such as:
 
 ## building
 
-used a firebase backend
+used a firebase backend and REACT front end
 
+## live site 
+
+https://instagram-clone-8f5dd.web.app/
