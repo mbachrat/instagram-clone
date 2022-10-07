@@ -12,6 +12,8 @@ import SearchBar from "./SearchBar"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Logo from './finstagramLogo.png'
 
+
+
 const style = {
   position: 'absolute',
   top: '50%',
@@ -98,6 +100,7 @@ const signIn = (event) => {
   return (
     <div className="App">
       
+
 <Modal
         open={picture}
         onClose={() => setPicture(false)}>
@@ -219,12 +222,25 @@ const signIn = (event) => {
           ))
         }
       </div>
+      {/* testing routing */}
+
+{/* <BrowserRouter>
+         <Routes>
+          <Route path="/google1d3f55ed7f7e1bb3.html">
+           
+          </Route>
+          </Routes>
+        
+      </BrowserRouter> */}
+
+ 
         
         
         {/* post */}
         {/*post */}
 
     </div>
+    
   );
 }
 
