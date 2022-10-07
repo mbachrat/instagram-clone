@@ -45,15 +45,7 @@ function Post({user, postId, username, caption, imageUrl}) {
     setComment('');
   }
 
-  const openComments = () => {
-   return (
-     comments.map((comment) => (
-      <p>
-        <strong>{comment.username}</strong> {comment.text}
-      </p>
-    ))
-   ) 
-  }
+  
 
   
 
@@ -103,12 +95,7 @@ function Post({user, postId, username, caption, imageUrl}) {
               <Button onClick={() => setVisible(false)}>Hide Comments</Button>
         ): (
           <div></div>
-      )}
-
-
-
-            
-           
+      )}  
           </div>
 
 

@@ -10,7 +10,7 @@ import { Input } from '@mui/material';
 import ImageUpload from './ImageUpload';
 import SearchBar from "./SearchBar"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
+import Logo from './finstagramLogo.png'
 
 const style = {
   position: 'absolute',
@@ -184,7 +184,7 @@ const signIn = (event) => {
       <div className='app_header'>
         <img 
             className='app_headerImage'
-            src='https://logos-download.com/wp-content/uploads/2016/03/Instagram_Logo_2016.png'
+            src= {Logo}
             alt='Instagram'> 
         </img>
 
