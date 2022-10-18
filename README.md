@@ -1,7 +1,7 @@
 # Instagram Clone
 
 ### Description
-An Instagram Clone that copies some features from instagram. I built this project following a youtube tutorial and then continued building out the UI and adding the feature of Hiding/Showing comments. This was my first time using firebase as a backend 
+An Instagram Clone I built following a youtube tutorial and then continued the project by building out the UI and adding the feature of Hiding/Showing comments. This was my first time using firebase as a backend so there was a lot of troubleshooting and trying to figure out why google labels the website deceptive.
 
 ### Features
 - Sign up
@@ -11,7 +11,7 @@ An Instagram Clone that copies some features from instagram. I built this projec
 - Show/Hide Comments
 
 ### Features in Progress
-- 
+- Adding security to remove "deceptive site" tag
 - Direct Messaging
 - Profile Page
 
